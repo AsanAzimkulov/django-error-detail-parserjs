@@ -18,7 +18,8 @@ function parseDjangoErrorDetailToObject(djangoErrorDetailString) {
                         replaceAll(
                             replaceAll(
                                 djangoErrorDetailString,
-                                "{"
+                                "{",
+                                "[ErrorDetail("
                             ),
                             "]",
                             ""
@@ -39,3 +40,4 @@ function parseDjangoErrorDetailToObject(djangoErrorDetailString) {
 }
 
 export { parseDjangoErrorDetailToObject };
+
