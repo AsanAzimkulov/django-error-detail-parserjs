@@ -17,9 +17,13 @@ function parseDjangoErrorDetailToObject(djangoErrorDetailString) {
                     replaceAll(
                         replaceAll(
                             replaceAll(
-                                djangoErrorDetailString,
-                                "{",
-                                "[ErrorDetail("
+                                replaceAll(
+                                    djangoErrorDetailString,
+                                    "[ErrorDetail(",
+                                    "{",
+                                ),
+                                `'`,
+                                `"`
                             ),
                             "]",
                             ""
