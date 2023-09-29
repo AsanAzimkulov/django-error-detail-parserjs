@@ -10,37 +10,44 @@ function replaceAll(str, find, replace) {
 
 
 function parseDjangoErrorDetailToObject(djangoErrorDetailString) {
-    return JSON.parse(
-        replaceAll(
+    const result = {};
+    try {
+        result = JSON.parse(
             replaceAll(
                 replaceAll(
                     replaceAll(
                         replaceAll(
                             replaceAll(
                                 replaceAll(
-                                    djangoErrorDetailString,
-                                    "[ErrorDetail(",
-                                    "{",
+                                    replaceAll(
+                                        djangoErrorDetailString,
+                                        "[ErrorDetail(",
+                                        "{",
+                                    ),
+                                    `'`,
+                                    `"`
                                 ),
-                                `'`,
-                                `"`
+                                "]",
+                                ""
                             ),
-                            "]",
-                            ""
+                            "=",
+                            ":"
                         ),
-                        "=",
-                        ":"
+                        ")",
+                        "}"
                     ),
-                    ")",
-                    "}"
+                    "string",
+                    `"string"`,
                 ),
-                "string",
-                `"string"`,
-            ),
-            "code",
-            `"code"`
-        )
-    );
+                "code",
+                `"code"`
+            )
+        );
+    } catch (error) {
+
+    } finally {
+        return result;
+    }
 }
 
 export { parseDjangoErrorDetailToObject };
