@@ -1,0 +1,28 @@
+{
+    "name": "django-error-detail-parserjs",
+    "version": "1.0.5",
+    "description": "JS parser for django string representation rest api ErrorDetail class",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/AsanAzimkulov/django-error-detail-parserjs.git"
+    },
+    "keywords": [
+        "django",
+        "error",
+        "errordetail",
+        "parser",
+        "parse",
+        "restapierror",
+        "djangoerror"
+    ],
+    "author": "Asan Azimkulov",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/AsanAzimkulov/django-error-detail-parserjs/issues"
+    },
+    "homepage": "https://github.com/AsanAzimkulov/django-error-detail-parserjs#readme"
+}
